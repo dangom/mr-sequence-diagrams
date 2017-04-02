@@ -20,14 +20,14 @@ linejoin := mitered;
 u=1cm;
 pensize = 0.8pt;
 
-% y position of lines
+% y position of lines in the sequence diagram.
 numeric g[];
 rf=0;
 g0=-3u;
 g1=-5u;
 g2=-7u;
 
-% shared paths
+% shared paths used by multiple macros.
 path square, pulse, acq, arc;
 square = (0,0)--(0,1u)--(1u,1u)--(1u,0);
 pulse = (0,0){up}
@@ -48,6 +48,8 @@ enddef;
 %
 
 def squaref(expr off, xs, ys) =
+  % Draw a square at offset OFF, scaled in x by XS,
+  % and in y by YS. Effectively a rectangle.
   draw square xscaled xs yscaled ys shifted off;
 enddef;
 
@@ -73,6 +75,15 @@ def acqf(expr off, xs, ys) =
   unfill acq xscaled xs yscaled ys shifted off;
   draw acq xscaled xs yscaled ys shifted off;
   la = thelabel.rt("Acquire", off+(ys/4,0)*u);
+  unfill bbox la;
+  draw la;
+enddef;
+
+def namedacqf(expr off, xs, ys, name) =
+  picture la;
+  unfill acq xscaled xs yscaled ys shifted off;
+  draw acq xscaled xs yscaled ys shifted off;
+  la = thelabel.rt(name, off+(ys/4,0)*u);
   unfill bbox la;
   draw la;
 enddef;
@@ -149,6 +160,11 @@ enddef;
 
 def xacq(expr l) =
   acqf((Ox,Oy),l,0.7);
+  Ox := Ox + l*u;
+enddef;
+
+def xnamedacq(expr l, name) =
+  namedacqf((Ox,Oy),l,0.7, name);
   Ox := Ox + l*u;
 enddef;
 
