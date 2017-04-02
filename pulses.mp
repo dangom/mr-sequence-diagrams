@@ -193,6 +193,29 @@ def xtablegr(expr l, h, grad, upd) =
   Ox := Ox + l*u;
 enddef;
 
+def epireadouty(expr length, height, nreads) =
+  % Generates the phase axis of an  EPI Readout with N reads.
+  % LENGTH represents the length of each individual read.
+  % HEIGHT represents the height of each individual read.
+  for i=1 upto nreads:
+    xblip(0.1*length, height);
+    xline(0.9*length);
+  endfor;
+enddef;
+
+def epireadoutx(expr length, height, nreads) =
+  % Generates the read axis off an  EPI Readout with N reads.
+  % LENGTH represents the length of each individual read.
+  % HEIGHT represents the height of each individual read.
+  numeric h;
+  h := height;
+  for i=1 upto nreads:
+    h := -h;
+    xgrad(length, h);
+  endfor;
+enddef;
+
+
 % ----------------------------------------------------------------------
 % Overlay functions
 % These draw an object relative to the current position, but don't
