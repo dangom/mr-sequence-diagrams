@@ -109,6 +109,10 @@ def linef(expr off, len) =
   draw off--(off+(len,0));
 enddef;
 
+def dashlinef(expr off, len) =
+  draw off--(off+(len,0)) dashed evenly;
+enddef;
+
 def labelf(expr yoff, lab) =
   label.lft(lab infont defaultfont scaled 1.2, (0,yoff));
 enddef;
@@ -150,6 +154,11 @@ enddef;
 
 def xline(expr l) =
   linef((Ox,Oy),l*u);
+  Ox := Ox + l*u;
+enddef;
+
+def xdashline(expr l) =
+  dashlinef((Ox,Oy),l*u);
   Ox := Ox + l*u;
 enddef;
 
