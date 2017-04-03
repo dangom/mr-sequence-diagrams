@@ -1,4 +1,4 @@
-% Time-stamp: <2017-04-03 10:49:15 danielpgomez>
+% Time-stamp: <2017-04-03 16:42:56 danielpgomez>
 
 % Generate a Sequence Diagram for a Standard 2D EPI Sequence
 % Generate a Sequence Diagram for a MESH EPI Sequence.
@@ -49,7 +49,7 @@ beginfig(0);
   startline(rf,"RF");
   xline(start_delay);
 
-  ospan(rf_duration/2, -1.2, repetition_time, "TR");
+  ospan(rf_duration/2, -1.2, repetition_time, "Interslice TR");
   ospan(rf_duration/2, -1, echo_time, "TE");
   xpulse(rf_duration, rf_intensity, "A");
   xline(slice_rephase_duration);
@@ -142,7 +142,7 @@ beginfig(1);
   startline(rf,"RF");
   xline(start_delay);
 
-  ospan(rf_duration/2, -1.2, repetition_time, "TR");
+  ospan(rf_duration/2, -1.2, repetition_time, "Interslice TR");
   ospan(rf_duration/2, -1, echo_time, "TE");
 
 
@@ -291,7 +291,7 @@ beginfig(2);
   startline(rf,"RF");
   xline(start_delay);
 
-  ospan(rf_duration/2, -1.2, repetition_time, "TR");
+  ospan(rf_duration/2, -1.2, repetition_time, "Interslice TR");
   ospan(rf_duration/2, -1, echo_time, "TE");
 
 
