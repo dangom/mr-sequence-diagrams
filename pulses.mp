@@ -12,8 +12,9 @@
 %
 
 % output settings (comment out first two lines for TeX fonts)
-prologues:=2;   % EPS with Postscript fonts
+prologues:=3;   % EPS with Postscript fonts
 %defaultfont:="hlm"; % Use helvetica
+defaultfont := "phvr8r";
 linejoin := mitered;
 
 % default units and line width
@@ -23,9 +24,9 @@ pensize = 0.8pt;
 % y position of lines in the sequence diagram.
 numeric g[];
 rf=0;
-g0=-3u;
-g1=-5u;
-g2=-7u;
+g0=-2.5u;
+g1=-4.5u;
+g2=-6.5u;
 
 % shared paths used by multiple macros.
 path square, pulse, acq, arc;
@@ -202,6 +203,18 @@ def xtablegr(expr l, h, grad, upd) =
   Ox := Ox + l*u;
 enddef;
 
+def epireadoutx(expr length, height, nreads) =
+  % Generates the read axis off an  EPI Readout with N reads.
+  % LENGTH represents the length of each individual read.
+  % HEIGHT represents the height of each individual read.
+  numeric h;
+  h := height;
+  for i=1 upto nreads:
+    h := -h;
+    xgrad(length, h);
+  endfor;
+enddef;
+
 def epireadouty(expr length, height, nreads) =
   % Generates the phase axis of an  EPI Readout with N reads.
   % LENGTH represents the length of each individual read.
@@ -212,15 +225,16 @@ def epireadouty(expr length, height, nreads) =
   endfor;
 enddef;
 
-def epireadoutx(expr length, height, nreads) =
-  % Generates the read axis off an  EPI Readout with N reads.
+def epireadoutz(expr length, height, nreads) =
+  % Generates the phase axis of an  EPI Readout with N reads.
   % LENGTH represents the length of each individual read.
   % HEIGHT represents the height of each individual read.
   numeric h;
   h := height;
   for i=1 upto nreads:
     h := -h;
-    xgrad(length, h);
+    xblip(0.1*length, h);
+    xline(0.9*length);
   endfor;
 enddef;
 
@@ -241,6 +255,22 @@ enddef;
 def oshade(expr xoff, l, h) =
   fill square--cycle xscaled l yscaled h shifted (Ox+xoff*u,Oy)
     withcolor 0.7white;
+    % don't change current position
+enddef;
+
+def oredshade(expr xoff, l, h) =
+  color mylightred;
+  mylightred := (4/5,1/5,1/5);
+  fill square--cycle xscaled l yscaled h shifted (Ox+xoff*u,Oy)
+    withcolor mylightred;
+    % don't change current position
+enddef;
+
+def oorangeshade(expr xoff, l, h) =
+  color myorange;
+  myorange := (1,204/255,1/10);
+  fill square--cycle xscaled l yscaled h shifted (Ox+xoff*u,Oy)
+    withcolor myorange;
     % don't change current position
 enddef;
 
