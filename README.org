@@ -1,21 +1,21 @@
 #+TITLE: Pulse Sequence Graphics
 
 
-#+begin_note
+#+begin_quote
 The files found in this repository were originally created by Mark J  White for his PhD Thesis and were hosted at his website /celos.net/, which unfortunately does not exist anymore. A snapshot is available in the Internet Archive [[http://web.archive.org/web/20160629144038/http://www.celos.net/comp/pulses/][here]], though.
 According to his website:
 You're free to use, modify or copy the files in any way you like, as long as you credit Mark with copyright and authorship for the bits he wrote, and understand that it comes without any kind of guarantee.
 As a further note: Two of the macros found in /pulses.mp/, namely =tablegrf= and =xtablegr= were written by T. A. Wilkinson and can be found in his blog [[https://tinkertailorsoldiersponge.wordpress.com/category/tinker/latex/][here]].
-#+end_note
+#+end_quote
 
-This repository contains a MetaPost file called /pulses.mp/ which contains a set of macros for easily generating MR Pulse Sequence Diagrams programatically. It also contains a file called /seq.mp/, which contains examples of how to use the macros.
+This repository contains a MetaPost file called /pulses.mp/ which contains a set of macros for easily generating MR Pulse Sequence Diagrams programatically. It also contains a file called /seq.mp/ with examples of how to use the macros.
 
 To generate example images from those files simply run:
 #+BEGIN_SRC sh
 mpost seq.mp
 #+END_SRC
 
-It as assumed that MetaPost is installed in the system, which should be the case if you have a proper LaTeX distribution installed in your system. Should ImageMagick also be installed in the system, it is possible to convert the output to PNG by calling ~convert -density 300 input.mps output.png~. It is also possible to include .mps files directly into a LaTeX file by using the graphicx package and then adding a =\includegraphics{input.mps}= wherever the figure should be included.
+It as assumed that MetaPost is installed in the system, which should be the case if you have a proper LaTeX distribution. Should ImageMagick also be installed, it is possible to convert images to PNG by calling ~convert -density 300 input.mps output.png~. Alternatively, to include .mps files directly into a LaTeX file you can use the graphicx package and add a =\includegraphics{input.mps}= wherever the figure should be included.
 
 *  Examples
 
