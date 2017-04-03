@@ -34,7 +34,7 @@ It as assumed that MetaPost is installed in the system, which should be the case
 ** Readout Encoding Fragment
 #+ATTR_ORG: :width 400
 [[./images/figs-4.png]]
-** Phase Encoding Fragment
+** Phase Encoding Fragment with Spin Echo
 #+ATTR_ORG: :width 400
 [[./images/figs-5.png]]
 ** Multislice SE volume acquisition
