@@ -2,7 +2,7 @@
 
 
 #+begin_quote
-The files found in this repository were originally created by Mark J  White for his PhD Thesis and were hosted at his website /celos.net/, which unfortunately does not exist anymore. A snapshot is available in the Internet Archive [[http://web.archive.org/web/20160629144038/http://www.celos.net/comp/pulses/][here]], though.
+The files "pulses.mp" and "seq.mp" found in this repository were originally created by Mark J  White for his PhD Thesis and were hosted at his website /celos.net/, which unfortunately does not exist anymore. A snapshot is available in the Internet Archive [[http://web.archive.org/web/20160629144038/http://www.celos.net/comp/pulses/][here]], though.
 According to his website:
 You're free to use, modify or copy the files in any way you like, as long as you credit Mark with copyright and authorship for the bits he wrote, and understand that it comes without any kind of guarantee.
 As a further note: Two of the macros found in /pulses.mp/, namely =tablegrf= and =xtablegr= were written by T. A. Wilkinson and can be found in his blog [[https://tinkertailorsoldiersponge.wordpress.com/category/tinker/latex/][here]].
@@ -15,7 +15,7 @@ To generate example images from those files simply run:
 mpost seq.mp
 #+END_SRC
 
-It as assumed that MetaPost is installed in the system, which should be the case if you have a proper LaTeX distribution. Should ImageMagick also be installed, it is possible to convert images to PNG by calling ~convert -density 300 input.mps output.png~. Alternatively, to include .mps files directly into a LaTeX file you can use the graphicx package and add a =\includegraphics{input.mps}= wherever the figure should be included.
+For this to work, MetaPost has to be installed in the system, which should be the case if you have a proper LaTeX distribution. Should ImageMagick also be installed, it is possible to convert images to PNG by calling ~convert -density 300 input.mps output.png~. Alternatively, to include .mps files directly into a LaTeX file you can use the graphicx package and add a =\includegraphics{input.mps}= wherever the figure should be included.
 
 *  Examples
 
