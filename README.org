@@ -5,7 +5,7 @@
 The files "pulses.mp" and "seq.mp" found in this repository were originally created by Mark J  White for his PhD Thesis and were hosted at his website /celos.net/, which unfortunately does not exist anymore. A snapshot is available in the Internet Archive [[http://web.archive.org/web/20160629144038/http://www.celos.net/comp/pulses/][here]], though.
 According to his website:
 You're free to use, modify or copy the files in any way you like, as long as you credit Mark with copyright and authorship for the bits he wrote, and understand that it comes without any kind of guarantee.
-As a further note: Two of the macros found in /pulses.mp/, namely =tablegrf= and =xtablegr= were written by T. A. Wilkinson and can be found in his blog [[https://tinkertailorsoldiersponge.wordpress.com/category/tinker/latex/][here]].
+As a further note: Two of the macros found in /pulses.mp/, namely =tablegrf= and =xtablegr= were written by T. A. Wilkinson and can be found in his blog [[https://tinkertailorsoldiersponge.com/blog/2013/12/17/pulse-sequence-diagrams-using-metapost][here]].
 #+end_quote
 
 This repository contains a MetaPost file called /pulses.mp/ which contains a set of macros for easily generating MR Pulse Sequence Diagrams programatically. It also contains a file called /seq.mp/ with examples of how to use the macros.
